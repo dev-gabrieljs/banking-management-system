@@ -49,26 +49,28 @@ public class TransferService {
         toAccount.setBalance(toAccount.getBalance().add(amount));
 
         // Salva os estados atualizados das contas
-        userRepository.save(fromUser);
-        userRepository.save(toUser);
+        userRepository.save(fromUser);  // Salva o usuário com a conta atualizada
+        userRepository.save(toUser);    // Salva o usuário com a conta atualizada
 
         // Cria e salva a transferência
         Transfer transfer = new Transfer();
-        transfer.setFromUserId(fromUserId);
-        transfer.setToUserId(toUserId);
+        transfer.setFromUser(fromUser);  // Atribui o objeto User diretamente
+        transfer.setToUser(toUser);      // Atribui o objeto User diretamente
         transfer.setAmount(amount);
         transfer.setTransferDate(LocalDateTime.now());
 
         transferRepository.save(transfer);
     }
 
+
     public List<String> getAllTransfers() {
         List<Transfer> transfers = transferRepository.findAll();
 
         return transfers.stream()
-                .map(transfer -> "Cliente: " + transfer.getUser().getName() + ", Transferencia: " + transfer.getAmount())
+                .map(transfer -> "De: " + transfer.getFromUser().getName() + ", Para: " + transfer.getToUser().getName() + ", Transferência: " + transfer.getAmount())
                 .collect(Collectors.toList());
     }
+
 
 }
 

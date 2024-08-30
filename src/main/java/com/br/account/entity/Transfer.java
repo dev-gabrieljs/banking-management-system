@@ -12,11 +12,13 @@ public class Transfer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "from_user_id", nullable = false)
-    private Long fromUserId;
+    @ManyToOne(fetch = FetchType.LAZY)  // Assumindo que um usuário pode ter várias transferências
+    @JoinColumn(name = "from_user_id", nullable = false)
+    private User fromUser;
 
-    @Column(name = "to_user_id", nullable = false)
-    private Long toUserId;
+    @ManyToOne(fetch = FetchType.LAZY)  // Assumindo que um usuário pode ter várias transferências
+    @JoinColumn(name = "to_user_id", nullable = false)
+    private User toUser;
 
     @Column(nullable = false, precision = 13, scale = 2)
     private BigDecimal amount;
@@ -24,14 +26,7 @@ public class Transfer {
     @Column(name = "transfer_date", nullable = false)
     private LocalDateTime transferDate;
 
-    private User user;
-
-    public User getUser() {
-        return user;
-    }
-
-
-    // Getters and Setters
+    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -40,20 +35,20 @@ public class Transfer {
         this.id = id;
     }
 
-    public Long getFromUserId() {
-        return fromUserId;
+    public User getFromUser() {
+        return fromUser;
     }
 
-    public void setFromUserId(Long fromUserId) {
-        this.fromUserId = fromUserId;
+    public void setFromUser(User fromUser) {
+        this.fromUser = fromUser;
     }
 
-    public Long getToUserId() {
-        return toUserId;
+    public User getToUser() {
+        return toUser;
     }
 
-    public void setToUserId(Long toUserId) {
-        this.toUserId = toUserId;
+    public void setToUser(User toUser) {
+        this.toUser = toUser;
     }
 
     public BigDecimal getAmount() {
