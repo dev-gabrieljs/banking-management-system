@@ -1,4 +1,4 @@
-package com.br.account.controller.exception;
+package com.br.account.exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,13 +21,17 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<String> handleNotFoundException(NoSuchElementException notFoundException) {
-        return new ResponseEntity<>("Resource ID not found.", HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>("\n" +
+                "ID do recurso não encontrado.", HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(Throwable.class)
     public ResponseEntity<String> handleUnexpectedException(Throwable unexpectedException) {
-        var message = "Unexpected server error, see the logs.";
+        var message = "\n" +
+                "Erro inesperado do servidor, consulte os logs.";
         logger.error(message, unexpectedException);
         return new ResponseEntity<>(message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+
 }
