@@ -63,7 +63,7 @@ public class TransferService {
     public List<Transfer> getAllTransfers() {
         List<Transfer> transfers = transferRepository.findAll();
         if (transfers.isEmpty()) {
-            throw new NoSuchElementException("Lista vazia.");
+            throw new RuntimeException("Lista vazia.");
         }
         return transfers;
     }
