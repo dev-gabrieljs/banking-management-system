@@ -33,8 +33,8 @@ public class TransferController {
 
     // Endpoint para listar todas as transferências
     @GetMapping
-    public ResponseEntity<List<Transfer>> getAllTransfers() {
-        List<Transfer> transfers = transferService.getAllTransfers();
+    public ResponseEntity<List<String>> getAllTransfers() {
+        List<String> transfers = transferService.getAllTransfers();
         return ResponseEntity.ok(transfers);
     }
 }

@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 @Service
 public class TransferService {
@@ -61,9 +62,12 @@ public class TransferService {
         transferRepository.save(transfer);
     }
 
-    public List<Transfer> getAllTransfers() {
+    public List<String> getAllTransfers() {
         List<Transfer> transfers = transferRepository.findAll();
-        return transfers.isEmpty() ? Collections.emptyList() : transfers;
+
+        return transfers.stream()
+                .map(transfer -> "Cliente: " + transfer.getUser().getName() + ", Transferencia: " + transfer.getAmount())
+                .collect(Collectors.toList());
     }
 
 }

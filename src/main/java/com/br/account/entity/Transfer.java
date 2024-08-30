@@ -24,6 +24,13 @@ public class Transfer {
     @Column(name = "transfer_date", nullable = false)
     private LocalDateTime transferDate;
 
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+
     // Getters and Setters
     public Long getId() {
         return id;
