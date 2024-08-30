@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -62,10 +63,8 @@ public class TransferService {
 
     public List<Transfer> getAllTransfers() {
         List<Transfer> transfers = transferRepository.findAll();
-        if (transfers.isEmpty()) {
-            throw new RuntimeException("Lista vazia.");
-        }
-        return transfers;
+        return transfers.isEmpty() ? Collections.emptyList() : transfers;
     }
+
 }
 
