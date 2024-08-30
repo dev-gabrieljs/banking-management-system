@@ -21,8 +21,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<String> handleNotFoundException(NoSuchElementException notFoundException) {
-        return new ResponseEntity<>("\n" +
-                "ID do recurso não encontrado.", HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(notFoundException.getMessage(),HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(Throwable.class)

@@ -21,8 +21,10 @@ public class UserService {
 
     // Método para encontrar usuário por ID
     public User findById(Long id) {
-        return userRepository.findById(id).orElseThrow(NoSuchElementException::new);
+        return userRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("ID do recurso não encontrado."));
     }
+
 
     // Método para criar um novo usuário
     public User create(User userToCreate) {
