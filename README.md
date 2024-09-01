@@ -81,7 +81,7 @@ Lá incluímos todas os endpoints de CRUD, além de aplicar boas práticas (uso 
 ## Endpoints da API
 
 | Método  | Endpoint                         | Descrição                                                   |
-|---------|-----------------------------------|-------------------------------------------------------------|
+|---------|----------------------------------|-------------------------------------------------------------|
 | `GET`   | `/users`                         | Lista todos os usuários cadastrados.                        |
 | `GET`   | `/users/{id}`                    | Retorna detalhes de um usuário específico pelo ID.          |
 | `POST`  | `/users`                         | Cria um novo usuário.                                       |
@@ -90,6 +90,8 @@ Lá incluímos todas os endpoints de CRUD, além de aplicar boas práticas (uso 
 | `GET`   | `/users/account/{accountNumber}` | Busca usuário pelo número da conta.                         |
 | `POST`  | `/users/{userId}/features`       | Adiciona uma nova feature ao usuário.                       |
 | `POST`  | `/users/{userId}/news`           | Adiciona uma nova notícia ao usuário.                       |
+| `POST`  | `/transfers`                     | Realiza uma transferência entre contas de usuários.         |
+| `GET`   | `/transfers`                     | Lista todas as transferências realizadas.                   |
 | `POST`  | `/transfers`                     | Realiza uma transferência entre contas de usuários.         |
 | `GET`   | `/transfers`                     | Lista todas as transferências realizadas.                   |
 
