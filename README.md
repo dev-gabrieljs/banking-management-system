@@ -47,7 +47,7 @@ classDiagram
     -String description
   }
 
- class Transfer {
+  class Transfer {
     -Long id
     -User fromUser
     -User toUser
@@ -59,8 +59,10 @@ classDiagram
   User "1" *-- "N" Feature
   User "1" *-- "1" Card
   User "1" *-- "N" News
+  User "1" *-- "N" Transfer
   Transfer "1" --> "1" User : fromUser
   Transfer "1" --> "1" User : toUser
+
 ```
 
 ## IMPORTANTE
