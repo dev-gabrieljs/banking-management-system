@@ -47,10 +47,20 @@ classDiagram
     -String description
   }
 
+ class Transfer {
+    -Long id
+    -User fromUser
+    -User toUser
+    -BigDecimal amount
+    -LocalDateTime transferDate
+  }
+
   User "1" *-- "1" Account
   User "1" *-- "N" Feature
   User "1" *-- "1" Card
   User "1" *-- "N" News
+  Transfer "1" --> "1" User : fromUser
+  Transfer "1" --> "1" User : toUser
 ```
 
 ## IMPORTANTE
