@@ -59,8 +59,8 @@ classDiagram
   User "1" *-- "N" Feature : has
   User "1" *-- "1" Card : has
   User "1" *-- "N" News : has
-  User "1" "1" -- "N" Transfer : initiates
-  User "1" "1" -- "N" Transfer : receives
+  User "1" -- "N" Transfer : initiates
+  User "1" -- "N" Transfer : receives
   Transfer "1" --> "1" User : fromUser
   Transfer "1" --> "1" User : toUser
 
