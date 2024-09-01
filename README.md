@@ -13,6 +13,15 @@ Java RESTful API criada para a Santander Dev Week.
 
 O Figma foi utilizado para a abstração do domínio desta API, sendo útil na análise e projeto da solução.
 
+## IMPORTANTE
+
+Este projeto foi construído com um viés totalmente educacional para a DIO. O projeto base, que serve como a fundação para esta versão aprimorada, foi disponibilizado pela DIO e pode ser encontrado no seguinte repositório:
+
+### [digitalinnovationone/santander-dev-week-2023-api](https://github.com/digitalinnovationone/santander-dev-week-2023-api)
+
+A versão original da DIO inclui funcionalidades básicas e serve como um excelente ponto de partida para aprendizado. Este repositório representa uma versão mais robusta e avançada, com o objetivo de adicionar mais funcionalidades e melhorias. Se você está buscando um desafio mais completo ou uma referência adicional, consulte o repositório da DIO para mais detalhes 👊🤩
+
+
 ## Diagrama de Classes (Domínio da API)
 
 ```mermaid
@@ -67,14 +76,6 @@ classDiagram
 
 ```
 
-## IMPORTANTE
-
-Este projeto foi construído com um viés totalmente educacional para a DIO. Por isso, disponibilizamos uma versão mais robusta dele no repositório oficial da DIO:
-
-### [digitalinnovationone/santander-dev-week-2023-api](https://github.com/digitalinnovationone/santander-dev-week-2023-api)
-
-Lá incluímos todas os endpoints de CRUD, além de aplicar boas práticas (uso de DTOs e refinamento na documentação da OpenAPI). Sendo assim, caso queira um desafio/referência mais completa é só acessar 👊🤩
-
 ## Funcionalidades da API
 
 ### Gerenciamento de Usuários
@@ -106,7 +107,6 @@ Lá incluímos todas os endpoints de CRUD, além de aplicar boas práticas (uso 
 | `POST`  | `/users/{userId}/news`           | Adiciona uma nova notícia ao usuário.                       |
 | `POST`  | `/transfers`                     | Realiza uma transferência entre contas de usuários.         |
 | `GET`   | `/transfers`                     | Lista todas as transferências realizadas.                   |
-| `POST`  | `/transfers`                     | Realiza uma transferência entre contas de usuários.         |
-| `GET`   | `/transfers`                     | Lista todas as transferências realizadas.                   |
+
 
 
